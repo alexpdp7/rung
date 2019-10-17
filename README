@@ -1,3 +1,5 @@
 ~/.config/rung/rung.toml:
 
 slack_url = 'https://hooks.slack.com/services/...'
+
+$ rung your message here

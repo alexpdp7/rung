@@ -36,5 +36,12 @@ fn send_to_slack(config: RungConfig, message: &str) -> Result<(), Box<dyn Error>
 
 fn main() {
     let config: RungConfig = confy::load("rung").unwrap();
-    send_to_slack(config, "ping").unwrap();
+    send_to_slack(
+        config,
+        &::std::env::args()
+            .skip(1)
+            .collect::<Vec<String>>()
+            .join(" "),
+    )
+    .unwrap();
 }
