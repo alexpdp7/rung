@@ -116,7 +116,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./target/release/cmdocker
-          asset_name: cmdocker
+          asset_path: ./target/release/rung
+          asset_name: rung
           asset_content_type: application/x-executable
     if: github.ref == 'refs/heads/master' && github.event_name == 'push'
