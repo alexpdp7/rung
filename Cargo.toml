@@ -5,7 +5,7 @@ authors = ["alex <alex@pdp7.net>"]
 edition = "2018"
 
 [dependencies]
-ureq = { version = "1.0.0", features = ["json", "tls"] }
+ureq = { version = "1.1.0", features = ["json", "tls"] }
 confy = "0.4.0"
 serde = "1.0.110"
 serde_derive = "1.0.110"
