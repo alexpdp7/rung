@@ -7,5 +7,5 @@ edition = "2018"
 [dependencies]
 ureq = { version = "1.1.2", features = ["json", "tls"] }
 confy = "0.4.0"
-serde = "1.0.111"
+serde = "1.0.112"
 serde_derive = "1.0.111"
