@@ -19,7 +19,7 @@ impl ::std::default::Default for RungConfig {
 }
 
 fn send_to_slack(config: RungConfig, message: &str) -> Result<(), Box<dyn Error>> {
-    if config.slack_url == "" {
+    if config.slack_url.is_empty() {
         return Err(From::from("no slack url in config"));
     }
     ureq::post(&config.slack_url).send_json(json!({
