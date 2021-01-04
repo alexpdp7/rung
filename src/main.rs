@@ -22,16 +22,10 @@ fn send_to_slack(config: RungConfig, message: &str) -> Result<(), Box<dyn Error>
     if config.slack_url == "" {
         return Err(From::from("no slack url in config"));
     }
-    let resp = ureq::post(&config.slack_url)
-        .set("X-My-Header", "Secret")
-        .send_json(json!({
-            "text": message,
-        }));
-    if resp.status() == 200 {
-        Ok(())
-    } else {
-        Err(From::from(resp.status_text()))
-    }
+    ureq::post(&config.slack_url).send_json(json!({
+        "text": message,
+    }))?;
+    Ok(())
 }
 
 fn main() {
