@@ -43,7 +43,7 @@ jobs:
           override: true
       - shell: bash
         env:
-          TEST_URL: ${{ secrets.TEST_URL }}
+          TEST_URL: foo
         run: |
           mkdir -p ~/.config/rung/
           echo >~/.config/rung/rung.toml slack_url = "'"$TEST_URL"'"
