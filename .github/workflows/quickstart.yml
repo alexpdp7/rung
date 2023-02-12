@@ -47,6 +47,7 @@ jobs:
         run: |
           mkdir -p ~/.config/rung/
           echo >~/.config/rung/rung.toml slack_url = "'"$TEST_URL"'"
+          cat ~/.config/rung/rung.toml
       - uses: actions-rs/cargo@v1
         with:
           command: run
